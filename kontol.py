@@ -290,7 +290,8 @@ def menu():
 def bot():
 	try:
 		token = open('token.txt', 'r').read()
-	except (KeyError, IOError):jalan('%s╚══[%s!%s] %sToken/Cookies Invalid Ngab !!'%(M,P,M,P));menu_log()
+	except (KeyError, IOError):
+		exit("%s╚══[%s!%s] %sToken/Cookies Invalid"%(M,P,M,P));menu_log()
 	komen_ku = ('Bang Aang Ganteng Banget Deh')
 	komen_mu = ('Anjay Bang Ndrii Tambah Ganteng Aja:v')
 	komen_kita = ('Bang Aang Ganteng Banget Deh')
