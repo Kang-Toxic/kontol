@@ -221,13 +221,13 @@ def menu():
         n = y['name']
         i = y['id']
     except (KeyError,IOError):
-        print('%s╔══[ %sWaduh Ngab %s]%s'%(M,P,M,P))
+        print('%s╠══[ %sWaduh Ngab %s]%s'%(M,P,M,P))
         print('%s║'%(M))
         jalan('%s╚══[%s!%s] %sToken/Cookies Invalid'%(M,P,M,P))
         os.system('rm -rf token.txt')
         menu_log()
     except requests.exceptions.ConnectionError:
-        print('%s╔══[ %sWaduh Ngab %s]%s'%(M,P,M,P))
+        print('%s╠══[ %sWaduh Ngab %s]%s'%(M,P,M,P))
         print('%s║'%(M))
         jalan('%s╚══[%s!%s] %sConnection Problem'%(M,P,M,P))
         exit()
@@ -1656,7 +1656,7 @@ def cek_hasil():
     input('%s╚══[ %sKembali %s]%s'%(O,P,O,P))
     menu()
 def var_menu():
-    print('%s╔══[ %sPilih Metode Untuk Login %s]'%(O,P,O))
+    print('%s╠══[ %sPilih Metode Untuk Login %s]'%(O,P,O))
     print('%s║'%(O))
     print('%s╠══[%s1%s] %sLogin Pakai Token [Token PLN]'%(O,P,O,P))
     print('%s╠══[%s2%s] %sLogin Pakai Cookies [Kueh Kering]'%(O,P,O,P))
